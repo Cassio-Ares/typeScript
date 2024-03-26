@@ -42,3 +42,20 @@ function mostrarDados(array) {
 }
 mostrarDados(arrNum);
 mostrarDados(arrLet);
+/**
+ * função com narrowing (opção OU ) onde vamos receber um ou outro tipo de
+ * dado e a partir disso vamos ter determinada ação.
+ * @param data
+ */
+const CPF1 = "02135485225";
+const CPF2 = 12457885475;
+function validarData(data) {
+    if (typeof data === "string") {
+        console.log(`CPF ${data} é do tipo string`);
+    }
+    else if (typeof data === "number") {
+        console.log(`CPF ${data} é do tipo numero`);
+    }
+}
+validarData(CPF1);
+validarData(CPF2);
