@@ -32,3 +32,29 @@ const DBZ = new Protagonista("Goku(Kakaroto)", "Dragon Ball", "Ki");
 console.log(DBZ);
 const chamar = DBZ.chamarProta();
 console.log(chamar);
+//Metodos de acesso:
+/**
+ * Public pode ser acessado de qualquer lugar
+ */
+class PessoaPublic {
+    constructor(nome) {
+        this.nome = nome;
+    }
+}
+let pessoaP = new PessoaPublic("João");
+console.log(pessoaP.nome); // Saída: João
+/**
+ * Privete só pode ser acessado dentro da class que foi declarado
+ */
+class Pessoa {
+    constructor(idade) {
+        this.idade = idade;
+    }
+    mostrarIdade() {
+        console.log("Idade:", this.idade);
+    }
+}
+let pessoa = new Pessoa(40);
+pessoa.mostrarIdade(); // Saída: Idade: 30
+console.log(pessoa.mostrarIdade());
+//console.log(pessoa.idade); // ERRO: 'idade' é privado e só pode ser acessado dentro da classe 'Pessoa'

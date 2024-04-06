@@ -41,3 +41,67 @@ console.log(DBZ)
 
 const chamar = DBZ.chamarProta()
 console.log(chamar)
+
+//Metodos de acesso:
+
+/**
+ * Public pode ser acessado de qualquer lugar
+ */
+class PessoaPublic {
+    public nome: string;
+
+    constructor(nome: string) {
+        this.nome = nome;
+    }
+}
+
+let pessoaP = new PessoaPublic("João");
+console.log(pessoaP.nome); // Saída: João
+
+
+/**
+ * Privete só pode ser acessado dentro da class que foi declarado
+ */
+
+class Pessoa {
+    private idade: number;
+
+    constructor(idade: number) {
+        this.idade = idade;
+    }
+
+    mostrarIdade() {
+        console.log("Idade:", this.idade);
+    }
+}
+
+let pessoa = new Pessoa(40);
+pessoa.mostrarIdade(); // Saída: Idade: 30
+//console.log(pessoa.idade); // ERRO: 'idade' é privado e só pode ser acessado dentro da classe 'Pessoa'
+
+
+/**
+ * Protected: os dados só podem ser acessados dentro da propria class ou nas classes filhas (subclasses)
+ */
+
+class Animal {
+    protected tipo: string;
+
+    constructor(tipo: string) {
+        this.tipo = tipo;
+    }
+}
+
+class Cachorro extends Animal {
+    constructor() {
+        super("Cachorro");
+    }
+
+    mostrarTipo() {
+        console.log("Tipo:", this.tipo);
+    }
+}
+
+let cachorro = new Cachorro();
+cachorro.mostrarTipo(); // Saída: Tipo: Cachorro
+//console.log(cachorro.tipo); // ERRO: 'tipo' é protegido e só pode ser acessado dentro da classe 'Animal' e suas subclasses

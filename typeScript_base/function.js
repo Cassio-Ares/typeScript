@@ -47,7 +47,7 @@ mostrarDados(arrLet);
  * dado e a partir disso vamos ter determinada ação.
  * @param data
  */
-const CPF1 = "02135485225";
+const CPF1 = "021.354.852-25";
 const CPF2 = 12457885475;
 function validarData(data) {
     if (typeof data === "string") {
